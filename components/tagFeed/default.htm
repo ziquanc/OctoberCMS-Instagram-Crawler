@@ -1,0 +1,11 @@
+{% for m in __SELF__.media %}
+  <p>{{ m.id }}</p>
+  {% if m.type == 'image' %}
+    <img src="{{ m.imageThumbnailUrl }}" >
+  {% elseif m.type == 'video' %}
+    <video width="480" height="480" controls>
+      <source src="{{ m.videoLowResolutionUrl }}"
+      type="video/mp4"/>
+    </video>
+  {% endif %}
+{% endfor %}

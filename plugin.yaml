@@ -1,0 +1,6 @@
+plugin:
+    name: 'kent.instagramcrawler::lang.plugin.name'
+    description: 'kent.instagramcrawler::lang.plugin.description'
+    author: Kent
+    icon: oc-icon-instagram
+    homepage: ''

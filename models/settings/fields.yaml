@@ -1,0 +1,8 @@
+fields:
+  username:
+    span: left
+    label: Username
+
+  tag:
+    span: left
+    label: Tag
