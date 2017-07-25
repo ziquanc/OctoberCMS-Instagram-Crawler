@@ -5,27 +5,28 @@ use Cms\Classes\ComponentBase;
 use Kent\InstagramCrawler\Models\Settings;
 use InstagramScraper\Instagram;
 
-class TagFeed extends ComponentBase
+class UserFeed extends ComponentBase
 {
     public $media;
 
     public function componentDetails()
     {
         return [
-            'name'        => 'Tag Feed',
-            'description' => 'Instagram media based on a specified tag.'
+            'name'        => 'User Feed',
+            'description' => 'Instagram media based on a specified user.'
         ];
     }
 
     public function defineProperties()
     {
         return [
-            'tag' => [
-                'title'             => 'Tag',
-                'description'       => 'The tag on which to retrieve media.',
+            'user_name' => [
+                'title'             => 'User Name',
+                'description'       => 'Restrict returned media by the specified user.',
+                'default'           => '',
                 'type'              => 'string',
                 'validationPattern' => '^(?=\s*\S).*$',
-                'validationMessage' => 'The Tag property is required'
+                'validationMessage' => 'The User Name property is required'
             ],
             'limit' => [
                 'title'             => 'Limit',
@@ -49,6 +50,6 @@ class TagFeed extends ComponentBase
     public function onRun()
     {
       $api = new Instagram();
-      $this->media = $this->page['media'] = $api->getMediasByTag($this->property('tag'),  (int)$this->property('limit'));
+      $this->media = $this->page['media'] = $api->getMedias($this->property('user_name'),  (int)$this->property('limit'));
     }
 }

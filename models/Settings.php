@@ -16,6 +16,5 @@ class Settings extends Model
      * Validation rules
      */
     public $rules = [
-        'username'             => 'required',
     ];
 }

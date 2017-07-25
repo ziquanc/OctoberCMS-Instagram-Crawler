@@ -1,8 +1,8 @@
 fields:
   username:
     span: left
-    label: Username
+    label: Client Id
 
   tag:
     span: left
-    label: Tag
+    label: Access Token

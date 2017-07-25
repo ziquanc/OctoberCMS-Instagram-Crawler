@@ -17,7 +17,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
       return [
-        'Kent\InstagramCrawler\Components\TagFeed' => 'TagFeed'
+        'Kent\InstagramCrawler\Components\TagFeed' => 'TagFeed',
+        'Kent\InstagramCrawler\Components\UserFeed' => 'UserFeed'
       ];
     }
 

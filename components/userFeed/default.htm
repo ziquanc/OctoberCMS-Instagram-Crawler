@@ -2,7 +2,7 @@
   {% for m in __SELF__.media %}
   <div class="col-sm-6 col-md-4">
   {% if m.type == 'image' %}
-    <img src="{{ m.imageThumbnailUrl }}">
+    <img src="{{ m.imageThumbnailUrl }}" width="100%">
   {% elseif m.type == 'video' %}
     <video width="480" height="480" controls>
       <source src="{{ m.videoLowResolutionUrl }}"
